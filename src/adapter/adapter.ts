@@ -65,7 +65,7 @@ export class TypeOrmDbAdapter<T> {
   }
 
   public insertMany(entities: any[]) {
-    return Promise.all(entities.map((e) => this.repository.create(e)));
+    return Promise.all(entities.map((e) => this.create(e)));
   }
 
   public beforeSaveTransformID(entity: T, _idField: string) {
